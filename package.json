@@ -1,0 +1,9 @@
+{
+	"name": "david",
+	"dependencies": {
+		"ws": "^3.1.0"
+	},
+	"scripts": {
+		"preinstall": "npm i -g node-windows"
+	}
+}
