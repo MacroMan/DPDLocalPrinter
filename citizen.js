@@ -6,6 +6,8 @@ var exec = require('child_process').exec;
 
 // Globals
 var file = process.env.TEMP + "\\LABEL.PRN";
+//var file = "/tmp/label.prn";
+//console.log(file);
 
 // WebSocket server
 wss.on('connection', function (ws) {
@@ -16,7 +18,8 @@ wss.on('connection', function (ws) {
 				return console.log("Error saving data to file");
 			} else {
 				// And copy the data to the printer
-				exec("COPY /B " + file + " \\%COMPUTERNAME%\CITIZEN");
+				//console.log(data);
+				exec("COPY /B " + file + " \\\\%COMPUTERNAME%\\CITIZEN");
 			}
 		});
 	});
