@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>DPD Label Printer test page</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    var prn_data = "M3000c0000eO0220f290naLD11PISIH12 \
+1911A1003790010TEST LABEL \
+E";
+console.log(prn_data);
+    $(document).ready(function(){
+      var $log = $('#log'),
+        ws = new WebSocket("ws://localhost:4000");
+
+      $log.append('Connecting to ws://localhost:4000<br/>');
+
+      ws.onerror = function(event) {
+        console.log("Error:", event);
+        $log.append('Error connecting. See console for error.<br/>');
+    	};
+
+      ws.onopen = function() {
+        $log.append('Connected<br/>');
+    		ws.send(prn_data);
+        $log.append('Data sent.<br/>A test label should have printed.<br/>');
+    	};
+    });
+  </script>
+</head>
+<body>
+  <div id="log">
+
+  </div>
+</body>

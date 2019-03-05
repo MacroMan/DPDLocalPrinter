@@ -1,6 +1,7 @@
 {
 	"name": "david",
 	"dependencies": {
+		"node-windows": "^0.1.14",
 		"ws": "^3.1.0"
 	},
 	"scripts": {

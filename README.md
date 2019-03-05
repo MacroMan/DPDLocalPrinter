@@ -1,42 +1,34 @@
+
 # DPDLocalPrinter
 
-A small utility that enables sending Citizen Label printer PRN data directly to the printer.
+A program that enables sending Citizen Label printer PRN data directly to the label/barcode printer.
 Designed to be connected to from a webpage using websockets or another utility running on the computer with the ability to connect to a websocket.
 
 ## Getting Started
 
-This utility runs on Node.js installed on the local computer running windows 7 or higher.
+This program runs on the local computer running windows 7 or higher.
 This must be the same computer that the printer is plugged into.
-
-### Prerequisites
-
-Administrator privilages are required to install this utility.
-You will need to download and install Node.js locally.
-Follow the instructions at https://nodejs.org/en/download/
 
 ### Installing
 
-Download this repository (as a zip file is fine, you don't have to have Git installed)
-Extract the files to C:\Program Files\DPDLocalPrinter\
-You must use that exact path or edit install.js and change the paths.
-
-Create a printer share for the local Citizen label printer and give it the share name "CITIZEN"
-If you want to use a different share name, then edit citizen.js and change the name in the exec() line
-
-Run command prompt as Administrator, navigate to the install directory and install the node prerequisites and Windows service
-
-    cd "C:\Program Files\DPDLocalPrinter\"
-    npm install
-    node install.js
+ - Create a printer share for the local Citizen label printer and give it the share name "CITIZEN"
+ - Download and run "DPD Label Printer.exe" to perform the installation.
+ - Let the installer run test.html to print a test label
 
 ### Usage
-
 Once installed, you can connect using any websocket client at ws://localhost:4000 and send the PRN data as a text stream.
 See example-client.js for a JavaScript client example.
 
-### Editing files
+## Installing from source
 
-I have written this utility on Linux, so editing these files in notepad on Windows won't work. Either use Notepad++, antoher IDE such as Atom or a Linux machine to edit the code.
+### Installation
+ - Clone or download this repo
+ - Download portable node: https://nodejs.org/dist/v10.15.2/win-x86/node.exe
+ - This must be saved as "node.exe" in the source directory
+ - Run `npm install`
+ - Install the service by running `node.exe service.js install`
+ - Uninstall by running `node.exe service.js uninstall`
+ - If you are going to compile the final executable, you need to have Inno Setup installed: http://www.jrsoftware.org/isinfo.php
 
 ## License
 
