@@ -12,7 +12,7 @@ This must be the same computer that the printer is plugged into.
 ### Installing
 
  - Create a printer share for the local Citizen label printer and give it the share name "CITIZEN"
- - Download and run "DPD Label Printer.exe" to perform the installation.
+ - Download and run "DPD Label Printer.exe" to perform the installation: https://github.com/MacroMan/DPDLocalPrinter/releases/download/v1.0/DPD.Local.Printer.exe
  - Let the installer run test.html to print a test label
 
 ### Usage
