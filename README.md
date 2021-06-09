@@ -1,3 +1,6 @@
+# DEPRECIATED
+This code is out of date, and I have no interest/incentive to keep it up to date.
+Use at your own risk. If you want to take this repo over, let me know, and I'll happily transfer it.
 
 # DPDLocalPrinter
 
